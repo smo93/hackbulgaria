@@ -2,9 +2,9 @@
 
 from subprocess import call
 import inspect
-import lesson1
+import lesson2
 
-ALLFUNCS = inspect.getmembers(lesson1, inspect.isfunction)
+ALLFUNCS = inspect.getmembers(lesson2, inspect.isfunction)
 for current_func in ALLFUNCS:
     call(["mkdir", current_func[0]])
     current_file = open(current_func[0] + "/solution.py", "w")
