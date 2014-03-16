@@ -16,7 +16,7 @@ class Cat2Test(unittest.TestCase):
         self.assertEqual(expexted_output, output)
 
     def tearDown(self):
-        call('rm file1 file1', shell=True)
+        call('rm file1 file2', shell=True)
 
 if __name__ == '__main__':
     unittest.main()
