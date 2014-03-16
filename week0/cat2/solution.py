@@ -10,7 +10,7 @@ def read_multiple_files(filenames):
 
 
 def main():
-    print ("\n\n".join(read_multiple_files(sys.argv[1:])))
+    print ("\n".join(read_multiple_files(sys.argv[1:])))
 
 if __name__ == '__main__':
     main()
