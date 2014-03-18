@@ -10,8 +10,11 @@ def add_order(orders, name, price):
     print("Taking order from " + name + " for " + str(price))
 
 def print_status(orders):
+    result = []
     for person in orders:
-            print(person + ' - ' + str(orders[person]))
+        result.append(person + ' - ' + str(orders[person]))
+    result = sorted(result)
+    return '\n'.join(result) + '\n'
 
 def save(orders):
     ts = time()
@@ -36,6 +39,7 @@ def print_orders_dict(dict_of_orders):
 def load_orders(n, dict_of_orders, orders):
     file = open(dict_of_orders[n], "r")
     content = file.read()
+    file.close()
     content = content.splitlines()
     orders.clear()
     for line in content:
@@ -58,7 +62,7 @@ def main():
             is_changed_l = True
             is_changed_f = True
         elif spl_cmd[0].lower() == "status" and len(spl_cmd) == 1:
-            print_status(orders)
+            print(print_status(orders))
         elif spl_cmd[0].lower() == "save" and len(spl_cmd) == 1:
             save(orders)
             is_changed_l = False
