@@ -15,10 +15,10 @@ def list_to_number(digits):
 
 def member_of_nth_fib_lists(listA, listB, needle):
     n = 1
-    while n < 10:
+    while True:
         nth = nth_fib_lists(listA, listB, n)
-        string = str(list_to_number(nth))
-        if str(list_to_number(needle)).count(string):
+        if len(nth) > len(needle):
+            return False
+        if nth == needle:
             return True
         n += 1
-    return False
