@@ -3,6 +3,7 @@ import sys
 def sum_ints_from_file(filename):
 	file = open(filename, "r")
 	content = file.read()
+	file.close()
 	ints = content.split()
 	result = 0
 	for item in ints:
