@@ -18,7 +18,7 @@ class ConcatTest(unittest.TestCase):
         self.assertEqual(expected_output, output)
 
     def tearDown(self):
-        call('rm file1 file2', shell=True)
+        call('rm file1 file2 MEGATRON', shell=True)
 
 if __name__ == '__main__':
     unittest.main()
