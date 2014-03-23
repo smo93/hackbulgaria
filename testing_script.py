@@ -5,7 +5,7 @@ def find_all_test_files():
     return check_output('find ./ -name test.py', shell=True).decode().splitlines()
 
 def run_test(test_file):
-    call('cd {0} && py {1} && cd ..'.format(test_file[:-7], test_file[-7:]), shell=True)
+    call('cd {0} && py {1}'.format(test_file[:-7], test_file[-7:]), shell=True)
 
 def main():
     test_files = find_all_test_files()
